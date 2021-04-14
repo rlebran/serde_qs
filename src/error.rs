@@ -36,6 +36,10 @@ pub enum Error {
     /// Error processing UTF-8 for a `str`
     #[error(transparent)]
     Utf8(#[from] str::Utf8Error),
+
+    #[cfg(any(feature = "actix-validator", feature = "actix2-validator"))]
+    #[error("Query validate error: {0}")]
+    Validate(validator::ValidationErrors),
 }
 
 impl Error {

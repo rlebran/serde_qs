@@ -1,4 +1,4 @@
-[package]
+﻿[package]
 authors = ["Sam Scott <sam@osohq.com>"]
 edition = "2018"
 categories = ["encoding", "web-programming"]
@@ -19,6 +19,7 @@ percent-encoding = "2.1.0"
 serde = "1.0.124"
 thiserror = "1.0.24"
 tracing = { version = "0.1.25", optional = true }
+validator = { version = ">=0.11, <=0.12", features = ["derive"], optional = true }
 warp-framework = { package = "warp", version = "0.3.0", default-features = false, optional = true }
 
 [dev-dependencies]
@@ -31,6 +32,8 @@ serde_urlencoded = "0.7.0"
 default = []
 actix = ["actix-web", "futures"]
 actix2 = ["actix-web2", "futures"]
+actix-validator = ["actix", "validator"]
+actix2-validator = ["actix2", "validator"]
 warp = [ "futures", "tracing", "warp-framework" ]
 
 [package.metadata.docs.rs]

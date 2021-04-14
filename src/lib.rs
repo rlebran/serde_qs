@@ -179,6 +179,8 @@ extern crate serde;
 
 #[cfg(any(feature = "actix", feature = "actix2"))]
 pub mod actix;
+#[cfg(any(feature = "actix-validator", feature = "actix2-validator"))]
+pub mod actix_validate;
 mod de;
 mod error;
 mod ser;

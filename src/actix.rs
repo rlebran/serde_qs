@@ -165,8 +165,8 @@ where
 /// ```
 
 pub struct QsQueryConfig {
-    ehandler: Option<Arc<dyn Fn(QsError, &HttpRequest) -> ActixError + Send + Sync>>,
-    qs_config: QsConfig,
+    pub(crate) ehandler: Option<Arc<dyn Fn(QsError, &HttpRequest) -> ActixError + Send + Sync>>,
+    pub(crate) qs_config: QsConfig,
 }
 
 impl QsQueryConfig {
